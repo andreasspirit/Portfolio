@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andreas Pnevmatikas Portfolio</title>
+  <meta name="description" content="Personal portfolio / one-page resume of Andreas Pnevmatikas">
+  <style>
+    /* ===== Reset ===== */
+    * { margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #062709, #132606);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* ===== Variables ===== */
+    :root {
+      --bg1: #062709;
+      --bg2: #062709;
+      --accent: #60fae8;
+      --muted: #ffffff;
+      --glass: rgba(255, 255, 255, 0.05);
+      --glass-border: rgb(65, 131, 71);
+    }
+
+    /* ===== Header ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgb(12, 62, 56);
+      border-bottom: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex; justify-content: center;
+      gap: 30px;
+      margin: 0; padding: 15px 0;
+    }
+    nav ul li a {
+      color: var(--muted);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s, border-bottom 0.3s;
+      padding: 5px 0;
+    }
+    nav ul li a:hover {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    /* ===== Sections ===== */
+    section {
+      min-height: 75vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 50px 20px;
+      border-bottom: 1px solid var(--glass-border);
+      background: var(--glass);
+      scroll-margin-top: 80px;
+    }
+    .portrait {
+      width: 100%; max-width: 450px; aspect-ratio: 1/1;
+      border-radius: 16px; overflow: hidden;
+      margin: 0 auto 20px auto;
+      margin-top: 80px;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid var(--glass-border);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    h1,h2,h3,h4 { margin: 0 0 12px 0; }
+    p {
+      margin: 0 0 16px 0;
+      color: var(--muted);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(275,275,275,0.18);
+      padding: 12px 12px;
+      border-radius: 999px;
+      font-size: 20px;
+      margin: 0 6px 6px 0;
+    }
+    h1, h2 { margin-bottom: 20px; color: var(--accent); text-align: center; }
+    p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      text-align: left;
+      font-size: 1.1em; }
+
+    /* ===== Cards ===== */
+    .card {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      padding: 20px;
+      margin: 10px;
+      border-radius: 12px;
+      width: 100%; max-width: 800px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(125, 161, 252, 0.4);
+      border-color: var(--accent);
+    }
+    .card h3 { margin-bottom: 10px; color: var(--accent); }
+
+    /* ===== Social Links ===== */
+    .social-links img {
+      width: 40px;
+      height: 40px;
+      filter: brightness(0) invert(1); /* makes sure SVGs appear white */
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .social-links a:hover img {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 10px var(--accent));
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+      color: var(--accent);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--glass);
+      border-top: 1px solid var(--glass-border);
+      font-size: 0.9em;
+    }
+    .resume-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .resume-btn:hover {
+      background: #418347;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <nav>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#details">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#social">Social</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== Hero Section ===== -->
+<section id="hero">
+  <div class="portrait">
+    <img src="src/img_4167__cropped_.jpg" alt="Andreas Pnevmatikas">
+  </div>
+  <h1>Andreas Pnevmatikas</h1>
+  <div>
+    <span class="badge">Games Developer</span>
+    <span class="badge">3D / Game Dev</span>
+    <span class="badge">Creative Developer</span>
+  </div>
+</section>
+
+<!-- ===== About Section ===== -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Passionate and creative developer specializing in real-time 3D applications, interactive web experiences, and game development.
+    With a strong foundation in programming and 3D design, I enjoy building projects that combine functionality, performance, and visual appeal.
+    Always eager to learn new technologies and transform ideas into engaging digital experiences.
+  </p>
+  <a href="src/CV Andreas Pnevmatikas .pdf" target="_blank" class="resume-btn">📄 Download Resume</a>
+</section>
+
+<!-- ===== Experience Section ===== -->
+<section id="details">
+  <h2>Experience & Education</h2>
+
+  <div class="card">
+    <h3>🎓 Current Studies</h3>
+    <h4>BSc (Hons) Computer Science — University of Central Lancashire (2023-Present)</h4>
+    <p>Focused on games development, 3D programming, and software development.</p>
+  </div>
+
+  <div class="card">
+    <h3>🏫 Education</h3>
+    <h4>Lyceum of Agios Georgios Larnaca (2019-2022)</h4>
+    <p>Built strong foundations in Mathematics, Physics, Programming, and Networks.
+      Developed critical thinking, problem-solving, and algorithmic skills that prepared me for Computer Science studies.</p>
+  </div>
+
+  <div class="card">
+    <h3>💼 Internships</h3>
+    <h4>IT Support Intern — Quality Group (Jun–Jul 2024)</h4>
+    <p>Assisted with network troubleshooting, software installation, server management, and technical support for staff.</p>
+    <h4>IT User Support Intern — HF Markets (Jun–Sep 2025)</h4>
+    <p>Supported hardware installations, system modifications, and network troubleshooting. Provided technical assistance and helped resolve IT-related issues across the company.</p>
+  </div>
+
+  <div class="card">
+    <h3>📜 Certifications</h3>
+    <p>✔ Cisco CCNA 1 & 2<br>✔ ECDL Certification<br>✔ IGCSE Computer Science<br>✔ First Aid at Work (Emergency)</p>
+  </div>
+</section>
+
+<!-- ===== Projects Section ===== -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>🔢 Sudoku Solver (C++)</h3>
+    <p>Developed a Sudoku solver in C++ using a stack-based backtracking algorithm.
+      Loads puzzles from files, validates moves, and generates complete solutions with efficient memory management.</p>
+  </div>
+
+  <div class="card">
+    <h3>🚗 Hover Racing Game (TL-Engine)</h3>
+    <p>Built a 3D hover racing game featuring checkpoints, collision detection, hovercar physics, and multiple camera modes.
+      Implemented game states, countdown logic, and dynamic environments.</p>
+  </div>
+
+  <div class="card">
+    <h3>🌐 Student Union Shop (PHP & MySQL)</h3>
+    <p>Created a secure web application with user authentication, product management, and a shopping cart system.
+      Focused on security practices, database interactions, and a smooth user experience.</p>
+  </div>
+
+  <div class="card">
+    <h3>🏴‍☠️ Treasure Hunt Web App (Team Project)</h3>
+    <p>Collaborated in a team to build an interactive quiz-based web app with HTML, CSS, JavaScript, and Web APIs.
+      Implemented user scoring, leaderboards, and asynchronous features for real-time updates and a competitive user experience.</p>
+  </div>
+</section>
+
+<!-- ===== Contact Section ===== -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>📧 andreaspnevmatikas@gmail.com</p>
+  <p>📍 Larnaca, Cyprus</p>
+</section>
+
+<!-- ===== Social Section ===== -->
+<section id="social">
+  <h2>Social Links</h2>
+  <div class="social-links">
+    <a href="https://github.com/andreasspirit" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+    </a> <a href="mailto:andreaspnevmatikas@gmail.com">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Gmail">
+  </a>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <p>© 2025 Andreas | Portfolio</p>
+</footer>
+</body>
+</html>
